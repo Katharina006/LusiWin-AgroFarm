@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LusWin AgroFarm – Katalog Tani &amp; Ternak</title>
+<meta name="description" content="Katalog hasil pertanian dan peternakan LusWin AgroFarm. Pesan lewat WhatsApp, antar atau ambil di tempat.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+/* Warna lembut supaya nyaman di mata. Mode gelap otomatis mengikuti perangkat. */
+:root{--bg:#e6ede0;--card:#f7f9f2;--ink:#233226;--mu:#5b695d;--line:#41564a;--lime:#cfe58c;--pink:#f1b4cb;--vio:#b9aff0;--on:#233226;--dot:rgba(35,50,38,.07);--sh:rgba(35,50,38,.22);
+--hd:"Bricolage Grotesque","Arial Black",system-ui,sans-serif;--bd:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151c16;--card:#1f2820;--ink:#e4ecdc;--mu:#9aa798;--line:#5a7062;--lime:#a9c66a;--pink:#d79bb4;--vio:#9d92dc;--on:#1a241c;--dot:rgba(228,236,220,.05);--sh:rgba(0,0,0,.35)}}
+:root[data-theme="dark"]{--bg:#151c16;--card:#1f2820;--ink:#e4ecdc;--mu:#9aa798;--line:#5a7062;--lime:#a9c66a;--pink:#d79bb4;--vio:#9d92dc;--on:#1a241c;--dot:rgba(228,236,220,.05);--sh:rgba(0,0,0,.35)}
+*{box-sizing:border-box}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);background-image:radial-gradient(var(--dot) 1.5px,transparent 1.5px);background-size:22px 22px;color:var(--ink);font-family:var(--bd);line-height:1.55;padding-bottom:84px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+.w{max-width:1040px;margin:auto;padding:0 16px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:2px solid var(--line)}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-family:var(--hd);font-weight:800;font-size:1.25rem;display:flex;gap:8px;align-items:center}
+.logo i{font-style:normal;background:var(--lime);color:var(--on);border:2px solid var(--line);border-radius:10px;padding:2px 7px;transform:rotate(-6deg)}
+.cta{background:var(--ink);color:var(--bg);border:0;border-radius:999px;padding:9px 16px;font:700 .9rem var(--bd);text-decoration:none;cursor:pointer}
+.hero{padding:34px 0 10px}
+.pill{display:inline-block;background:var(--pink);color:var(--on);border:2px solid var(--line);border-radius:999px;padding:4px 12px;font-weight:700;font-size:.8rem;transform:rotate(-2deg)}
+h1{font-family:var(--hd);font-weight:800;font-size:clamp(2.2rem,8vw,4.2rem);line-height:1.02;margin:14px 0 12px;letter-spacing:-.03em}
+h1 mark{background:var(--lime);color:var(--on);padding:0 .15em;border-radius:.2em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hero p{max-width:540px;color:var(--mu);font-size:1.05rem;margin:0 0 16px}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:7px 14px;font-weight:700;box-shadow:3px 3px 0 var(--sh)}
+.tick{overflow:hidden;border-block:2px solid var(--line);background:var(--lime);color:var(--on);margin:22px 0;white-space:nowrap}
+.tick div{display:inline-block;padding:9px 0;font-family:var(--hd);font-weight:800;animation:mq 26s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.tick div{animation:none}html{scroll-behavior:auto}}
+.bar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:6px}
+input,textarea,select{font:inherit;color:var(--ink)}
+.bar input{flex:1 1 170px;padding:11px 14px;border:2px solid var(--line);border-radius:999px;background:var(--card)}
+.tab{padding:10px 16px;border:2px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);cursor:pointer;font:700 1rem var(--bd)}
+.tab.on{background:var(--ink);color:var(--bg)}
+h2{font-family:var(--hd);font-size:1.6rem;margin:26px 0 12px;letter-spacing:-.02em}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.card{background:var(--card);border:2px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:5px 5px 0 var(--sh);display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translate(-2px,-3px);box-shadow:8px 8px 0 var(--sh)}
+.ph{position:relative;border-bottom:2px solid var(--line)}
+.ph svg,.ph img{display:block;width:100%;height:auto}
+.bdg{position:absolute;top:10px;left:10px;background:var(--lime);color:var(--on);border:2px solid var(--line);border-radius:999px;padding:2px 10px;font-size:.75rem;font-weight:700;transform:rotate(-4deg)}
+.bdg.p{background:var(--pink)}.bdg.v{background:var(--vio)}
+.bd{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.bd h3{font-family:var(--hd);margin:0;font-size:1.25rem}
+.bd p{margin:0;color:var(--mu);font-size:.9rem;flex:1}
+.pr{font-weight:700;font-size:.95rem}
+.row{display:flex;gap:8px;align-items:center}
+.st{display:flex;align-items:center;border:2px solid var(--line);border-radius:999px;overflow:hidden;background:var(--card)}
+.st button{width:34px;height:36px;border:0;background:transparent;color:var(--ink);font-size:1.1rem;cursor:pointer}
+.st b{min-width:28px;text-align:center}
+.go{flex:1;padding:11px;border:2px solid var(--line);border-radius:999px;background:var(--lime);color:var(--on);font:700 1rem var(--bd);cursor:pointer}
+.go:active{transform:scale(.97)}
+.empty{color:var(--mu);padding:24px 0}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:36px 0}
+.why div{border:2px solid var(--line);border-radius:18px;padding:16px;background:var(--card)}
+.why b{display:block;font-family:var(--hd);font-size:1.1rem;margin-bottom:2px}
+footer{background:var(--ink);color:var(--bg);text-align:center;padding:26px 16px;margin-top:30px}
+footer b{font-family:var(--hd);font-size:1.2rem}
+footer p{margin:4px 0 0;opacity:.8;font-size:.85rem}
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:10px;justify-content:flex-end;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));pointer-events:none}
+.dock>*{pointer-events:auto;border:2px solid var(--line);border-radius:999px;padding:12px 18px;font:700 1rem var(--bd);box-shadow:3px 3px 0 var(--sh);text-decoration:none;cursor:pointer}
+#cb{background:var(--ink);color:var(--bg);flex:1;max-width:340px}
+.wa{background:#8fd6a4;color:#15301f}
+.ov{position:fixed;inset:0;z-index:40;background:rgba(10,18,12,.55);display:flex;align-items:flex-end;justify-content:center}
+.ov[hidden]{display:none}
+.sheet{background:var(--bg);color:var(--ink);width:100%;max-width:560px;max-height:92vh;overflow:auto;border:2px solid var(--line);border-radius:22px 22px 0 0;padding:16px 16px calc(20px + env(safe-area-inset-bottom,0px))}
+.sh{display:flex;justify-content:space-between;align-items:center}
+.sh h2{margin:0;font-size:1.3rem}
+#x{border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:50%;width:36px;height:36px;cursor:pointer}
+.ci{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-bottom:1px dashed var(--line)}
+label{display:block;font-weight:700;font-size:.9rem;margin-top:12px}
+label input,label textarea{display:block;width:100%;margin-top:4px;padding:11px 12px;border:2px solid var(--line);border-radius:14px;background:var(--card);font-weight:400}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
+.seg label{margin:0;border:2px solid var(--line);border-radius:14px;padding:11px;text-align:center;cursor:pointer;background:var(--card)}
+.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg label:has(input:checked){background:var(--lime);color:var(--on)}
+.hint{color:var(--mu);font-size:.85rem;margin:10px 0}
+#er{color:#c0443f;font-weight:700;min-height:1.4em;margin:6px 0 0}
+#send{width:100%;margin-top:6px}
+#toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 16px;border-radius:999px;font-weight:700;z-index:50;opacity:0;transition:opacity .2s;pointer-events:none}
+#toast.on{opacity:1}
+</style>
+</head>
+<body>
+<nav><div class="w"><div class="logo"><i>LW</i>LusWin AgroFarm</div><a class="cta" href="#katalog">Lihat katalog</a></div></nav>
+
+<div class="w hero">
+<span class="pill">🌱 fresh dari kebun &amp; kandang</span>
+<h1>Segar banget, <mark>langsung</mark> dari lahan kita.</h1>
+<p>Pilih produk, tentukan hari dan jam, lalu kirim pesanan lewat WhatsApp. Bisa diantar atau ambil di tempat.</p>
+<div class="chips"><div class="chip">🥬 4 sayur</div><div class="chip">🐖 3 ternak</div><div class="chip">🚚 Antar / ambil</div></div>
+</div>
+<div class="tick"><div>KANGKUNG ✦ BAYAM ✦ LABU ✦ GAMBAS ✦ BABI PEDAGING ✦ BABI KAMPUNG ✦ KAMBING ✦ KANGKUNG ✦ BAYAM ✦ LABU ✦ GAMBAS ✦ BABI PEDAGING ✦ BABI KAMPUNG ✦ KAMBING ✦ </div></div>
+
+<main class="w" id="katalog">
+<div class="bar">
+<input id="q" type="search" placeholder="Cari produk…" aria-label="Cari produk">
+<button class="tab on" data-k="semua">Semua</button>
+<button class="tab" data-k="tani">🥬 Pertanian</button>
+<button class="tab" data-k="ternak">🐖 Peternakan</button>
+</div>
+<div id="out"></div>
+<section class="why">
+<div><b>🌿 Selalu fresh</b>Dipanen sesuai pesanan biar tetap renyah.</div>
+<div><b>🤝 Langsung dari petani</b>Tanpa perantara, jelas asal-usulnya.</div>
+<div><b>🗓️ Atur sendiri jadwalnya</b>Pilih hari dan jam pengambilan atau pengantaran.</div>
+</section>
+</main>
+<footer><b>LusWin AgroFarm</b><p>WhatsApp: 0853-8652-9303</p><p>Harga dan stok bisa berubah. Foto produk masih foto dummy.</p></footer>
+
+<div class="dock"><button id="cb" hidden>🛒 Keranjang</button><a class="wa" id="fab" target="_blank" rel="noopener" href="#">💬 Chat WA</a></div>
+<div id="toast"></div>
+
+<div class="ov" id="m" hidden><div class="sheet" role="dialog" aria-label="Keranjang dan pengiriman">
+<div class="sh"><h2>🛒 Pesanan kamu</h2><button id="x" aria-label="Tutup">✕</button></div>
+<div id="cl"></div>
+<label>Nama<input id="nm" autocomplete="name" placeholder="Nama kamu"></label>
+<label style="margin-bottom:0">Cara terima pesanan</label>
+<div class="seg">
+<label><input type="radio" name="md" value="Antar" checked>🚚 Antar</label>
+<label><input type="radio" name="md" value="Ambil di tempat">🏡 Ambil di tempat</label>
+</div>
+<label id="adl">Alamat pengantaran<textarea id="ad" rows="2" placeholder="Jalan, nomor rumah, patokan"></textarea></label>
+<div class="two">
+<label>Tanggal<input type="date" id="dt"></label>
+<label>Jam<input type="time" id="tm"></label>
+</div>
+<label>Catatan khusus<textarea id="nt" rows="2" placeholder="Contoh: kangkung jangan banyak akar"></textarea></label>
+<p class="hint">Ongkir (jika diantar) dan total harga dikonfirmasi lewat WhatsApp.</p>
+<div id="er" role="alert"></div>
+<button class="go" id="send">Kirim pesanan via WhatsApp</button>
+</div></div>
+
+<script>
+// ===== PENGATURAN: edit bagian ini saja =====
+var WA = "6285386529303";            // nomor WhatsApp (awalan 62, tanpa 0 atau +)
+// Foto: ganti img dengan nama file foto di repo, misalnya img:"foto/kangkung.jpg". Kosongkan untuk foto dummy.
+// Harga: isi p, misalnya p:"Rp 5.000". Kosongkan untuk “Hubungi kami untuk harga”.
+var items = [
+ {k:"tani",n:"Kangkung",e:"🥬",d:"Batang renyah, daun hijau segar. Pas buat tumis dan plecing.",p:"",u:"ikat",img:"",a:"#7fd37b",b:"#2f8f4a",t:"Fresh"},
+ {k:"tani",n:"Bayam",e:"🌿",d:"Daun lembut dan bergizi, cocok untuk sayur bening.",p:"",u:"ikat",img:"",a:"#9be06a",b:"#3a8537",t:"Sehat"},
+ {k:"tani",n:"Labu",e:"🎃",d:"Daging tebal dan manis, enak untuk sayur, kolak, dan bubur.",p:"",u:"kg",img:"",a:"#ffcf6a",b:"#f08a3c",t:"Best seller",c:"p"},
+ {k:"tani",n:"Gambas",e:"🥒",d:"Muda dan segar, mantap untuk oseng dan sayur bening.",p:"",u:"kg",img:"",a:"#d9f27d",b:"#5bb04a",t:"Fresh"},
+ {k:"ternak",n:"Babi Pedaging",e:"🐖",d:"Dipelihara dengan pakan teratur di kandang bersih.",p:"",u:"ekor",img:"",a:"#ffc2da",b:"#f27aae",t:"Pilihan",c:"v"},
+ {k:"ternak",n:"Babi Kampung",e:"🐗",d:"Daging khas babi kampung, cocok untuk hajatan dan acara adat.",p:"",u:"ekor",img:"",a:"#e8bd9a",b:"#b4784a",t:"Khas",c:"p"},
+ {k:"ternak",n:"Kambing",e:"🐐",d:"Kambing sehat dan terawat, tersedia berbagai ukuran.",p:"",u:"ekor",img:"",a:"#d3c6ff",b:"#8b73f0",t:"Sehat",c:"v"}
+];
+// ===== akhir pengaturan =====
+
+var kat="semua",cari="",qty={},cart={};
+var $=function(id){return document.getElementById(id)};
+var out=$("out");
+
+function esc(s){return s.replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function toast(t){var e=$("toast");e.textContent=t;e.classList.add("on");setTimeout(function(){e.classList.remove("on")},1600)}
+
+function foto(i,x){
+ if(x.img)return '<img src="'+esc(x.img)+'" alt="'+esc(x.n)+'" loading="lazy">';
+ return '<svg viewBox="0 0 300 200" role="img" aria-label="Foto dummy '+esc(x.n)+'"><defs><linearGradient id="g'+i+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="'+x.a+'"/><stop offset="1" stop-color="'+x.b+'"/></linearGradient></defs><rect width="300" height="200" fill="url(#g'+i+')"/><circle cx="250" cy="40" r="60" fill="#fff" opacity=".18"/><circle cx="30" cy="190" r="70" fill="#000" opacity=".08"/><circle cx="150" cy="105" r="62" fill="#fff" opacity=".25"/><text x="150" y="140" font-size="96" text-anchor="middle">'+x.e+'</text><text x="12" y="190" font-size="11" font-family="sans-serif" fill="#fff" opacity=".9">foto dummy</text></svg>';
+}
+function kartu(x,i){
+ var h=x.p?esc(x.p)+" / "+x.u:"Hubungi kami untuk harga";
+ return '<div class="card"><div class="ph">'+foto(i,x)+'<span class="bdg '+(x.c||"")+'">'+x.t+'</span></div><div class="bd"><h3>'+esc(x.n)+'</h3><p>'+esc(x.d)+'</p><div class="pr">'+h+'</div><div class="row"><div class="st"><button data-m="-" data-i="'+i+'" aria-label="Kurangi">−</button><b id="n'+i+'">'+(qty[i]||1)+'</b><button data-m="+" data-i="'+i+'" aria-label="Tambah">+</button></div><button class="go" data-add="'+i+'">Tambah 🛒</button></div></div></div>';
+}
+function render(){
+ var html="",gr=[["tani","🥬 Hasil Pertanian"],["ternak","🐖 Hasil Peternakan"]];
+ gr.forEach(function(g){
+  if(kat!=="semua"&&kat!==g[0])return;
+  var l=items.map(function(x,i){return{x:x,i:i}}).filter(function(o){return o.x.k===g[0]&&o.x.n.toLowerCase().indexOf(cari)>-1});
+  if(!l.length)return;
+  html+="<h2>"+g[1]+'</h2><div class="grid">'+l.map(function(o){return kartu(o.x,o.i)}).join("")+"</div>";
+ });
+ out.innerHTML=html||'<div class="empty">Produk tidak ditemukan 🥲</div>';
+}
+function total(){var n=0;for(var k in cart)n+=cart[k];return n}
+function dock(){var n=total(),b=$("cb");b.hidden=!n;b.textContent="🛒 Keranjang ("+n+") · Checkout"}
+function cartList(){
+ var h="";
+ for(var k in cart){var x=items[k];h+='<div class="ci"><div><b>'+esc(x.n)+'</b><br><small>'+esc(x.u)+'</small></div><div class="st"><button data-c="-" data-i="'+k+'" aria-label="Kurangi">−</button><b>'+cart[k]+'</b><button data-c="+" data-i="'+k+'" aria-label="Tambah">+</button></div></div>'}
+ $("cl").innerHTML=h||'<div class="empty">Keranjang masih kosong.</div>';
+}
+
+$("q").addEventListener("input",function(e){cari=e.target.value.toLowerCase().trim();render()});
+document.querySelectorAll(".tab").forEach(function(t){t.addEventListener("click",function(){
+ document.querySelectorAll(".tab").forEach(function(y){y.classList.remove("on")});
+ t.classList.add("on");kat=t.dataset.k;render()})});
+
+out.addEventListener("click",function(e){
+ var b=e.target.closest("button");if(!b)return;
+ var i=b.dataset.i;
+ if(b.dataset.m){qty[i]=Math.max(1,(qty[i]||1)+(b.dataset.m==="+"?1:-1));$("n"+i).textContent=qty[i];return}
+ if(b.dataset.add!==undefined){var a=b.dataset.add;cart[a]=(cart[a]||0)+(qty[a]||1);qty[a]=1;$("n"+a).textContent=1;dock();toast("Masuk keranjang ✓")}
+});
+$("cl").addEventListener("click",function(e){
+ var b=e.target.closest("button");if(!b)return;
+ var i=b.dataset.i;cart[i]+=b.dataset.c==="+"?1:-1;
+ if(cart[i]<1)delete cart[i];
+ cartList();dock();
+});
+$("cb").addEventListener("click",function(){cartList();$("m").hidden=false});
+$("x").addEventListener("click",function(){$("m").hidden=true});
+$("m").addEventListener("click",function(e){if(e.target===$("m"))$("m").hidden=true});
+
+// Alamat hanya muncul jika dipilih "Antar"
+function mode(){return document.querySelector('input[name="md"]:checked').value}
+document.querySelectorAll('input[name="md"]').forEach(function(r){r.addEventListener("change",function(){$("adl").style.display=mode()==="Antar"?"block":"none"})});
+
+// Tanggal paling awal = hari ini
+var d=new Date();d.setMinutes(d.getMinutes()-d.getTimezoneOffset());$("dt").min=d.toISOString().slice(0,10);
+
+$("fab").href="https://wa.me/"+WA+"?text="+encodeURIComponent("Halo LusWin AgroFarm, saya mau tanya produk.");
+
+$("send").addEventListener("click",function(){
+ var er=$("er"),nm=$("nm").value.trim(),ad=$("ad").value.trim(),dt=$("dt").value,tm=$("tm").value,nt=$("nt").value.trim(),md=mode();
+ if(!total()){er.textContent="Keranjang masih kosong.";return}
+ if(!nm){er.textContent="Isi nama dulu ya.";return}
+ if(md==="Antar"&&!ad){er.textContent="Isi alamat pengantaran dulu ya.";return}
+ if(!dt||!tm){er.textContent="Pilih tanggal dan jam dulu ya.";return}
+ er.textContent="";
+ var hari=new Date(dt+"T00:00").toLocaleDateString("id-ID",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+ var L=["Halo LusWin AgroFarm, saya mau pesan:",""];
+ for(var k in cart)L.push("• "+cart[k]+" "+items[k].u+" "+items[k].n);
+ L.push("","Nama: "+nm,"Cara terima: "+md);
+ if(md==="Antar")L.push("Alamat: "+ad);
+ L.push("Waktu: "+hari+", pukul "+tm);
+ if(nt)L.push("Catatan: "+nt);
+ L.push("","Mohon konfirmasi ketersediaan dan total harganya. Terima kasih!");
+ window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(L.join("\n")),"_blank");
+});
+
+render();dock();
+</script>
+</body>
+</html>
