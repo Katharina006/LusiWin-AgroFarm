@@ -4,16 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>LusWin AgroFarm – Katalog Tani &amp; Ternak</title>
-<meta name="description" content="Katalog hasil pertanian dan peternakan LusWin AgroFarm. Pesan lewat WhatsApp, antar atau ambil di tempat.">
+<meta name="description" content="Katalog hasil pertanian dan peternakan LusWin AgroFarm, Melapeh Lama, Kutai Barat, Kalimantan Timur. Pesan lewat WhatsApp, antar atau ambil di tempat.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap">
 <style>
-/* Warna lembut supaya nyaman di mata. Mode gelap otomatis mengikuti perangkat. */
-:root{--bg:#e6ede0;--card:#f7f9f2;--ink:#233226;--mu:#5b695d;--line:#41564a;--lime:#cfe58c;--pink:#f1b4cb;--vio:#b9aff0;--on:#233226;--dot:rgba(35,50,38,.07);--sh:rgba(35,50,38,.22);
---hd:"Bricolage Grotesque","Arial Black",system-ui,sans-serif;--bd:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+/* Palet tema pertanian: hijau daun, kuning matahari, tanah liat. Selalu mode terang. */
+:root{color-scheme:light;--bg:#eef4dc;--card:#fffef6;--ink:#2e3b1f;--mu:#56633f;--line:#6a7d40;--leaf:#2f7d3a;--lime:#c6e17e;--clay:#f0b88e;--sun:#f5d97a;--on:#2e3b1f;--dot:rgba(106,125,64,.13);--sh:rgba(74,92,40,.22);
+--hd:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--bd:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#151c16;--card:#1f2820;--ink:#e4ecdc;--mu:#9aa798;--line:#5a7062;--lime:#a9c66a;--pink:#d79bb4;--vio:#9d92dc;--on:#1a241c;--dot:rgba(228,236,220,.05);--sh:rgba(0,0,0,.35)}}
-:root[data-theme="dark"]{--bg:#151c16;--card:#1f2820;--ink:#e4ecdc;--mu:#9aa798;--line:#5a7062;--lime:#a9c66a;--pink:#d79bb4;--vio:#9d92dc;--on:#1a241c;--dot:rgba(228,236,220,.05);--sh:rgba(0,0,0,.35)}
 *{box-sizing:border-box}
+html{overflow-x:hidden;-webkit-text-size-adjust:100%}
+img,svg{max-width:100%}
 html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);scroll-behavior:smooth}
 body{margin:0;background:var(--bg);background-image:radial-gradient(var(--dot) 1.5px,transparent 1.5px);background-size:22px 22px;color:var(--ink);font-family:var(--bd);line-height:1.55;padding-bottom:84px}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
@@ -22,12 +22,14 @@ nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(-
 nav .w{display:flex;align-items:center;justify-content:space-between;height:60px}
 .logo{font-family:var(--hd);font-weight:800;font-size:1.25rem;display:flex;gap:8px;align-items:center}
 .logo i{font-style:normal;background:var(--lime);color:var(--on);border:2px solid var(--line);border-radius:10px;padding:2px 7px;transform:rotate(-6deg)}
-.cta{background:var(--ink);color:var(--bg);border:0;border-radius:999px;padding:9px 16px;font:700 .9rem var(--bd);text-decoration:none;cursor:pointer}
+.cta{background:var(--leaf);color:#fff;border:0;border-radius:999px;padding:9px 16px;font:700 .9rem var(--bd);text-decoration:none;cursor:pointer}
 .hero{padding:34px 0 10px}
-.pill{display:inline-block;background:var(--pink);color:var(--on);border:2px solid var(--line);border-radius:999px;padding:4px 12px;font-weight:700;font-size:.8rem;transform:rotate(-2deg)}
+.pill{display:inline-block;background:var(--clay);color:var(--on);border:2px solid var(--line);border-radius:999px;padding:4px 12px;font-weight:700;font-size:.8rem;transform:rotate(-2deg)}
 h1{font-family:var(--hd);font-weight:800;font-size:clamp(2.2rem,8vw,4.2rem);line-height:1.02;margin:14px 0 12px;letter-spacing:-.03em}
 h1 mark{background:var(--lime);color:var(--on);padding:0 .15em;border-radius:.2em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .hero p{max-width:540px;color:var(--mu);font-size:1.05rem;margin:0 0 16px}
+.loc{display:inline-block;background:var(--sun);color:var(--on);border:2px solid var(--line);border-radius:999px;padding:5px 14px;font-weight:700;margin:0 0 14px}
+.why a{color:var(--leaf);font-weight:700}
 .chips{display:flex;gap:10px;flex-wrap:wrap}
 .chip{background:var(--card);border:2px solid var(--line);border-radius:14px;padding:7px 14px;font-weight:700;box-shadow:3px 3px 0 var(--sh)}
 .tick{overflow:hidden;border-block:2px solid var(--line);background:var(--lime);color:var(--on);margin:22px 0;white-space:nowrap}
@@ -38,7 +40,7 @@ h1 mark{background:var(--lime);color:var(--on);padding:0 .15em;border-radius:.2e
 input,textarea,select{font:inherit;color:var(--ink)}
 .bar input{flex:1 1 170px;padding:11px 14px;border:2px solid var(--line);border-radius:999px;background:var(--card)}
 .tab{padding:10px 16px;border:2px solid var(--line);border-radius:999px;background:var(--card);color:var(--ink);cursor:pointer;font:700 1rem var(--bd)}
-.tab.on{background:var(--ink);color:var(--bg)}
+.tab.on{background:var(--leaf);border-color:var(--leaf);color:#fff}
 h2{font-family:var(--hd);font-size:1.6rem;margin:26px 0 12px;letter-spacing:-.02em}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
 .card{background:var(--card);border:2px solid var(--line);border-radius:22px;overflow:hidden;box-shadow:5px 5px 0 var(--sh);display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s}
@@ -46,7 +48,7 @@ h2{font-family:var(--hd);font-size:1.6rem;margin:26px 0 12px;letter-spacing:-.02
 .ph{position:relative;border-bottom:2px solid var(--line)}
 .ph svg,.ph img{display:block;width:100%;height:auto}
 .bdg{position:absolute;top:10px;left:10px;background:var(--lime);color:var(--on);border:2px solid var(--line);border-radius:999px;padding:2px 10px;font-size:.75rem;font-weight:700;transform:rotate(-4deg)}
-.bdg.p{background:var(--pink)}.bdg.v{background:var(--vio)}
+.bdg.p{background:var(--clay)}.bdg.v{background:var(--sun)}
 .bd{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}
 .bd h3{font-family:var(--hd);margin:0;font-size:1.25rem}
 .bd p{margin:0;color:var(--mu);font-size:.9rem;flex:1}
@@ -61,13 +63,16 @@ h2{font-family:var(--hd);font-size:1.6rem;margin:26px 0 12px;letter-spacing:-.02
 .why{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:36px 0}
 .why div{border:2px solid var(--line);border-radius:18px;padding:16px;background:var(--card)}
 .why b{display:block;font-family:var(--hd);font-size:1.1rem;margin-bottom:2px}
-footer{background:var(--ink);color:var(--bg);text-align:center;padding:26px 16px;margin-top:30px}
+footer{background:var(--lime);color:var(--on);border-top:2px solid var(--line);text-align:center;padding:26px 16px;margin-top:30px}
 footer b{font-family:var(--hd);font-size:1.2rem}
-footer p{margin:4px 0 0;opacity:.8;font-size:.85rem}
+footer p{margin:4px 0 0;font-size:.85rem}
 .dock{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;gap:10px;justify-content:flex-end;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));pointer-events:none}
 .dock>*{pointer-events:auto;border:2px solid var(--line);border-radius:999px;padding:12px 18px;font:700 1rem var(--bd);box-shadow:3px 3px 0 var(--sh);text-decoration:none;cursor:pointer}
-#cb{background:var(--ink);color:var(--bg);flex:1;max-width:340px}
+#cb{background:var(--leaf);color:#fff;flex:1;max-width:340px}
 .wa{background:#8fd6a4;color:#15301f}
+#dm{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);z-index:60;background:var(--sun);color:var(--on);border-bottom:2px solid var(--line);padding:.6em 1em;font-weight:700;display:flex;gap:1em;justify-content:space-between;align-items:center}
+#dm[hidden]{display:none}
+#dm button{border:0;background:transparent;color:inherit;font-size:1.2em;cursor:pointer}
 .ov{position:fixed;inset:0;z-index:40;background:rgba(10,18,12,.55);display:flex;align-items:flex-end;justify-content:center}
 .ov[hidden]{display:none}
 .sheet{background:var(--bg);color:var(--ink);width:100%;max-width:560px;max-height:92vh;overflow:auto;border:2px solid var(--line);border-radius:22px 22px 0 0;padding:16px 16px calc(20px + env(safe-area-inset-bottom,0px))}
@@ -85,17 +90,47 @@ label input,label textarea{display:block;width:100%;margin-top:4px;padding:11px 
 .hint{color:var(--mu);font-size:.85rem;margin:10px 0}
 #er{color:#c0443f;font-weight:700;min-height:1.4em;margin:6px 0 0}
 #send{width:100%;margin-top:6px}
-#toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 16px;border-radius:999px;font-weight:700;z-index:50;opacity:0;transition:opacity .2s;pointer-events:none}
+#toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:var(--leaf);color:#fff;padding:8px 16px;border-radius:999px;font-weight:700;z-index:50;opacity:0;transition:opacity .2s;pointer-events:none}
 #toast.on{opacity:1}
+/* ===== Responsif ===== */
+@media (min-width:1000px){.w{max-width:1180px}.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (hover:none){.card:hover{transform:none;box-shadow:5px 5px 0 var(--sh)}}
+@media (max-width:640px){
+ .w{padding:0 12px}
+ nav .w{height:54px}
+ .logo{font-size:1.05rem}
+ .cta{padding:8px 12px;font-size:.85rem}
+ .hero{padding-top:22px}
+ .hero p{font-size:1rem}
+ .bar input{flex:1 1 100%}
+ .tab{padding:9px 13px;font-size:.92rem}
+ h2{font-size:1.35rem}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .card{border-radius:16px;box-shadow:3px 3px 0 var(--sh)}
+ .bd{padding:10px;gap:6px}
+ .bd h3{font-size:1.05rem}
+ .bd p{font-size:.82rem}
+ .pr{font-size:.82rem}
+ .row{flex-wrap:wrap}
+ .st{width:100%;justify-content:space-between}
+ .go{flex:1 1 100%;padding:9px;font-size:.92rem}
+ .bdg{font-size:.68rem;padding:1px 8px;top:8px;left:8px}
+ .why{grid-template-columns:1fr}
+ .dock{padding-left:12px;padding-right:12px}
+ .dock>*{padding:11px 14px;font-size:.95rem}
+}
+@media (max-width:400px){.two{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
+<div id="dm" hidden><span>Kamu membuka dengan mode “Situs desktop”. Matikan di menu browser supaya tampilan pas di HP.</span><button id="dx" aria-label="Tutup">✕</button></div>
 <nav><div class="w"><div class="logo"><i>LW</i>LusWin AgroFarm</div><a class="cta" href="#katalog">Lihat katalog</a></div></nav>
 
 <div class="w hero">
 <span class="pill">🌱 fresh dari kebun &amp; kandang</span>
 <h1>Segar banget, <mark>langsung</mark> dari lahan kita.</h1>
 <p>Pilih produk, tentukan hari dan jam, lalu kirim pesanan lewat WhatsApp. Bisa diantar atau ambil di tempat.</p>
+<div class="loc">📍 Melapeh Lama, Kutai Barat, Kalimantan Timur</div><br>
 <div class="chips"><div class="chip">🥬 4 sayur</div><div class="chip">🐖 3 ternak</div><div class="chip">🚚 Antar / ambil</div></div>
 </div>
 <div class="tick"><div>KANGKUNG ✦ BAYAM ✦ LABU ✦ GAMBAS ✦ BABI PEDAGING ✦ BABI KAMPUNG ✦ KAMBING ✦ KANGKUNG ✦ BAYAM ✦ LABU ✦ GAMBAS ✦ BABI PEDAGING ✦ BABI KAMPUNG ✦ KAMBING ✦ </div></div>
@@ -112,9 +147,10 @@ label input,label textarea{display:block;width:100%;margin-top:4px;padding:11px 
 <div><b>🌿 Selalu fresh</b>Dipanen sesuai pesanan biar tetap renyah.</div>
 <div><b>🤝 Langsung dari petani</b>Tanpa perantara, jelas asal-usulnya.</div>
 <div><b>🗓️ Atur sendiri jadwalnya</b>Pilih hari dan jam pengambilan atau pengantaran.</div>
+<div><b>📍 Lokasi kami</b>Melapeh Lama, Kutai Barat, Kalimantan Timur.<br><a href="https://www.google.com/maps/search/?api=1&amp;query=Melapeh+Lama+Kutai+Barat+Kalimantan+Timur" target="_blank" rel="noopener">Buka di Google Maps</a></div>
 </section>
 </main>
-<footer><b>LusWin AgroFarm</b><p>WhatsApp: 0853-8652-9303</p><p>Harga dan stok bisa berubah. Foto produk masih foto dummy.</p></footer>
+<footer><b>LusWin AgroFarm</b><p>📍 Melapeh Lama, Kutai Barat, Kalimantan Timur</p><p>WhatsApp: 0853-8652-9303</p><p>Harga dan stok bisa berubah. Foto produk masih foto dummy.</p></footer>
 
 <div class="dock"><button id="cb" hidden>🛒 Keranjang</button><a class="wa" id="fab" target="_blank" rel="noopener" href="#">💬 Chat WA</a></div>
 <div id="toast"></div>
@@ -134,7 +170,7 @@ label input,label textarea{display:block;width:100%;margin-top:4px;padding:11px 
 <label>Jam<input type="time" id="tm"></label>
 </div>
 <label>Catatan khusus<textarea id="nt" rows="2" placeholder="Contoh: kangkung jangan banyak akar"></textarea></label>
-<p class="hint">Ongkir (jika diantar) dan total harga dikonfirmasi lewat WhatsApp.</p>
+<p class="hint">Ambil di tempat: Melapeh Lama, Kutai Barat. Ongkir (jika diantar) dan total harga dikonfirmasi lewat WhatsApp.</p>
 <div id="er" role="alert"></div>
 <button class="go" id="send">Kirim pesanan via WhatsApp</button>
 </div></div>
@@ -235,6 +271,15 @@ $("send").addEventListener("click",function(){
  L.push("","Mohon konfirmasi ketersediaan dan total harganya. Terima kasih!");
  window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(L.join("\n")),"_blank");
 });
+
+// Deteksi HP yang memakai mode "Situs desktop" (layar kecil tapi lebar halaman besar)
+(function(){
+ var sw=Math.min(screen.width,screen.height),iw=window.innerWidth;
+ if(navigator.maxTouchPoints>0&&sw<700&&iw>=800){
+  var b=$("dm");b.hidden=false;b.style.fontSize=Math.round(14*iw/sw)+"px";
+  $("dx").addEventListener("click",function(){b.hidden=true});
+ }
+})();
 
 render();dock();
 </script>
