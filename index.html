@@ -85,9 +85,31 @@ footer p{margin:4px 0 0;font-size:.85rem}
 #dm{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);z-index:60;background:var(--sun);color:var(--on);border-bottom:2px solid var(--line);padding:.6em 1em;font-weight:700;display:flex;gap:1em;justify-content:space-between;align-items:center}
 #dm[hidden]{display:none}
 #dm button{border:0;background:transparent;color:inherit;font-size:1.2em;cursor:pointer}
-.ov{position:fixed;inset:0;z-index:40;background:rgba(10,18,12,.55);display:flex;align-items:flex-end;justify-content:center}
+.ov{
+  position:fixed;
+  inset:0;
+  z-index:40;
+  background:rgba(10,18,12,.55);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:16px;
+}
 .ov[hidden]{display:none}
-.sheet{background:var(--bg);color:var(--ink);width:100%;max-width:560px;max-height:92vh;overflow:auto;border:2px solid var(--line);border-radius:22px 22px 0 0;padding:16px 16px calc(20px + env(safe-area-inset-bottom,0px))}
+.sheet{
+  background:var(--bg);
+  color:var(--ink);
+  width:100%;
+  max-width:560px;
+  max-height:85vh;
+  max-height:85dvh;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch;
+  border:2px solid var(--line);
+  border-radius:22px;
+  padding:16px;
+}
 .sh{display:flex;justify-content:space-between;align-items:center}
 .sh h2{margin:0;font-size:1.3rem}
 #x{border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:50%;width:36px;height:36px;cursor:pointer}
