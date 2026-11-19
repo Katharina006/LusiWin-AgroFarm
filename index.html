@@ -231,7 +231,7 @@ details p{margin:8px 0 0;color:var(--mu)}
 </section>
 <h2>🚚 Info pengantaran &amp; pembayaran</h2>
 <div class="info" id="info"></div>
-<div id="tm"></div>
+<div id="testimoni"></div>
 <h2>❓ Tanya jawab</h2>
 <div id="faq"></div>
 </main>
@@ -439,7 +439,7 @@ function extras(){
  $("rd").innerHTML=h;$("rd").hidden=!h;
  var I=[["🚚 Area antar",INFO.area],["💸 Ongkir",INFO.ongkir],["🕒 Jam antar",INFO.jam],["📦 Minimal pesanan",INFO.minimal],["🏡 Ambil di tempat",INFO.ambil],["💳 Cara bayar",INFO.bayar]];
  $("info").innerHTML=I.filter(function(a){return a[1]}).map(function(a){return "<div><b>"+a[0]+"</b>"+esc(a[1])+"</div>"}).join("");
- if(TESTI.length)$("tm").innerHTML='<h2>💬 Kata pembeli</h2><div class="tg">'+TESTI.map(function(t){return "<blockquote>“"+esc(t.t)+"”<cite>— "+esc(t.n)+"</cite></blockquote>"}).join("")+"</div>";
+ if(TESTI.length)$("testimoni").innerHTML='<h2>💬 Kata pembeli</h2><div class="tg">'+TESTI.map(function(t){return "<blockquote>“"+esc(t.t)+"”<cite>— "+esc(t.n)+"</cite></blockquote>"}).join("")+"</div>";
  var F=[["Bagaimana cara memesan?","Pilih produk, tekan “Tambah”, lalu buka keranjang dan isi nama, hari, jam, serta catatan. Pesananmu akan terkirim ke WhatsApp kami."],
   ["Bisa pesan untuk hajatan atau acara?","Bisa. Tulis kebutuhanmu di kolom catatan khusus, atau chat kami langsung lewat WhatsApp."],
   ["Bagaimana cara bayarnya?",INFO.bayar],
